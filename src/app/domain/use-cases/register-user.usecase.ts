@@ -5,9 +5,9 @@ import { IUser } from '../models/User';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticateUserUseCase {
+export class RegisterUserUseCase {
   constructor(private userRepository: UserRepositoryImpl) {}
-  execute(email: string, password: string): Promise<IUser> {
-    return this.userRepository.authenticate(email, password);
+  execute(user: Partial<IUser>): Promise<IUser> {
+    return this.userRepository.register(user);
   }
 }

@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { IUser } from '../../domain/models/User';
 
 @Injectable({
@@ -23,16 +21,20 @@ export class LocalStorageService {
     }
   }
 
-  getUsers(): Observable<IUser[]> {
+  async getUsers(): Promise<IUser[]> {
     const users = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
-    return of(users).pipe(delay(300));
+    return new Promise((resolve) => {
+      resolve(users);
+    });
   }
 
-  addUser(user: IUser): Observable<IUser> {
+  addUser(user: Partial<IUser>): Promise<Partial<IUser>> {
     const users = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
     user.id = users.length + 1;
     users.push(user);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(users));
-    return of(user).pipe(delay(300));
+    return new Promise((resolve) => {
+      resolve(users);
+    });
   }
 }

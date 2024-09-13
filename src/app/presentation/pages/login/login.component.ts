@@ -11,6 +11,7 @@ import {
   SESSION_COOKIE,
 } from '../../../core/services/cookie.service';
 import { AuthenticateUserUseCase } from '../../../domain/use-cases/authenticate-user.usecase';
+import { IUser } from '../../../domain/models/User';
 
 @Component({
   selector: 'app-login',
@@ -36,12 +37,20 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
-    console.log('Login data:', this.loginForm.value);
+  async onSubmit() {
     if (this.loginForm.valid) {
       const email = this.loginForm.value.email;
-      this.cookieService.setCookie(SESSION_COOKIE.name, email, 5);
-      this.router.navigate(['/home']);
+      const password = this.loginForm.value.password;
+      try {
+        const user: Partial<IUser> = await this.authenticateUserUseCase.execute(
+          email,
+          password
+        );
+        this.cookieService.setCookie(SESSION_COOKIE.name, email, 5);
+        this.router.navigate(['/home']);
+      } catch (err: any) {
+        alert(err.message || 'An error occurred during login');
+      }
     } else {
       console.log('Form is invalid');
     }

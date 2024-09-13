@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authWatcherGuard } from './core/guards/auth-watcher.guard';
+import { StepTwoGuard } from './presentation/pages/signup/guard/step-two.guard';
 
 export const routes: Routes = [
   {
@@ -46,12 +47,14 @@ export const routes: Routes = [
           import(
             './presentation/pages/signup/pages/signup-enter-data/signup-enter-data.component'
           ).then((m) => m.SignupEnterDataComponent),
+        canActivate: [StepTwoGuard],
       },
-      { path: '', redirectTo: '/signup/verify-email', pathMatch: 'full' }
+      { path: '', redirectTo: '/signup/verify-email', pathMatch: 'full' },
     ],
   },
   {
     path: '**',
-    redirectTo: 'home', pathMatch: 'full' 
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
