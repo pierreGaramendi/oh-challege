@@ -5,13 +5,15 @@
             <app-custome-dorpdown title="Workspaces">
                 <app-dropdown-workspaces></app-dropdown-workspaces>
             </app-custome-dorpdown>
-            <app-custome-dorpdown title="Recent" />
+            <app-custome-dorpdown title="Recent">
+                <app-dropdown-recent-workspace></app-dropdown-recent-workspace>
+            </app-custome-dorpdown>
             <app-custome-dorpdown title="Crear">
-                <app-dropdown-new-board/>
+                <app-dropdown-new-board />
             </app-custome-dorpdown>
         </div>
         <div class="header__right">
-            <div>Avatar</div>
+            <app-custome-avatar/>
         </div>
     </div>
 </header>

@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.dropdown__workspace {
+  color: $color-text;
+  padding: $spacing-large;
+  &__item {
+    cursor: pointer;
+    margin-top: $spacing-large;
+    display: flex;
+    flex-direction: row;
+    &__icon {
+      background-color: red;
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: $border-radius-large;
+      margin-right: $spacing-small;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      &__title{
+        font-weight: $font-weight-bold;
+      }
+      &__subtitle{
+      
+      }
+    }
+  }
+}
