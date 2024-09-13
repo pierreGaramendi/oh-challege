@@ -5,6 +5,7 @@
   color: $color-text;
   padding: $spacing-large;
   &__item {
+    cursor: pointer;
     margin-top: $spacing-large;
   }
 }
