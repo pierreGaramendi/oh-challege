@@ -1,0 +1,88 @@
+@import "../../styles/variables";
+
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  
+  &__item {
+    border-bottom: 1px solid $color-light-grey;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    background-color: white;
+    color: $color-text;
+
+    padding: $spacing-small;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-hover-light;
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    border:none;
+    color: $color-text;
+    padding: 0 $spacing-small;
+    font-size: $font-size-small;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+
+    &.active {
+      max-height: 200px; // Ajusta este valor según el contenido
+      padding: $spacing-small;
+    }
+  }
+
+  &__itemX {
+    display: flex;
+    align-items: center;
+    padding: $spacing-small;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+
+    &--active {
+      background-color: $color-active-light;
+      color: $color-primary;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: $spacing-small;
+      background-color: $color-blue;
+      border-radius: 50%;
+      color: $color-white;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+    }
+
+    &__text {
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
+    }
+  }
+}

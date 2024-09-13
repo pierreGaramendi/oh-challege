@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: $avatar-size;
+  height: $avatar-size;
   background-color: $color-purple;
   color: $color-white;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   border-radius: 50%;
   cursor: pointer;
 }

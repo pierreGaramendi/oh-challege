@@ -7,8 +7,8 @@
     flex-direction: column;
     width: 200px;
     padding: $spacing-large;
-    border-radius: 8px;
-    background-color: #fff;
+    border-radius: $border-radius-medium;
+    background-color: $color-white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: $color-text;
   }
@@ -26,36 +26,37 @@
 
   &__close {
     cursor: pointer;
-    font-size: 20px;
-    color: #888;
+    font-size: $font-size-large;
+    color: $color-grey-medium;
   }
 
   &__input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: $spacing-small;
+    margin-bottom: $spacing-large;
+    border: 1px solid $color-border-light;
+    border-radius: $border-radius-small;
+    font-size: $font-size-small;
     box-sizing: border-box;
+
     &::placeholder {
-      color: #999;
+      color: $color-light-grey;
     }
   }
 
   &__button {
     width: 100%;
-    padding: 10px;
-    background-color: #0052cc;
-    color: white;
+    padding: $spacing-small;
+    background-color: $color-primary;
+    color: $color-white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: $border-radius-small;
+    font-size: $font-size-medium;
     cursor: pointer;
-    margin-bottom: 16px;
+    margin-bottom: $spacing-large;
 
     &:hover {
-      background-color: #003d99;
+      background-color: $color-primary-hover;
     }
   }
 
@@ -67,7 +68,7 @@
   &__color-option {
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: $border-radius-small;
     cursor: pointer;
 
     &--blue {
@@ -87,6 +88,3 @@
     }
   }
 }
-
-
-

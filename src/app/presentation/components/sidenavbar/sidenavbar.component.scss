@@ -1,0 +1,63 @@
+@import "../../styles/variables";
+
+.sidenav {
+  width: 250px; // Ajusta este valor según lo que mejor te convenga
+  padding: $spacing-medium;
+  background-color: $color-white;
+  border-right: 1px solid $color-border-light;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: $spacing-small;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-hover-light;
+    }
+
+    &--active {
+      background-color: $color-active-light;
+      color: $color-primary;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: $spacing-small;
+      background-color: $color-blue;
+      border-radius: 50%;
+      color: $color-white;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+    }
+
+    &__text {
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-large;
+    color: $color-text;
+  }
+
+  &__section {
+    margin-bottom: $spacing-medium;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $color-border-light;
+    margin: $spacing-small 0;
+  }
+}
