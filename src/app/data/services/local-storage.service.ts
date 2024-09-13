@@ -12,8 +12,8 @@ export class LocalStorageService {
       const initialData: IUser[] = [
         {
           id: 1,
-          name: 'John Doe',
-          email: 'john@example.com',
+          name: 'Juan Perez',
+          email: 'juan@gmail.com',
           password: '123456',
         },
       ];
