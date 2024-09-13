@@ -9,7 +9,8 @@ import { Router, RouterModule } from '@angular/router';
 import {
   CookieService,
   SESSION_COOKIE,
-} from '../../../services/cookie.service';
+} from '../../../core/services/cookie.service';
+import { AuthenticateUserUseCase } from '../../../domain/use-cases/authenticate-user.usecase';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +21,12 @@ import {
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  //signup
-  constructor(private router: Router, private cookieService: CookieService) {
+
+  constructor(
+    private router: Router,
+    private cookieService: CookieService,
+    private authenticateUserUseCase: AuthenticateUserUseCase
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [

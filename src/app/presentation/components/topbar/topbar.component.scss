@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.header {
+  background-color: $color-primary;
+  padding: $spacing-large 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-large;
+    color: $color-white;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    color: $color-white;
+  }
+
+  &__logo {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    margin-right: $spacing-large;
+    color: $color-white;
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-large;
+
+    &-link {
+      font-size: $font-size-medium;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+      color: $color-white;
+      &:hover {
+        color: $color-primary-hover;
+        text-decoration: underline;
+      }
+    }
+  }
+}

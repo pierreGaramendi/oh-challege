@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authWatcherGuard } from './guards/auth-watcher.guard';
+import { authWatcherGuard } from './core/guards/auth-watcher.guard';
 
 export const routes: Routes = [
   {
@@ -52,6 +52,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'home', pathMatch: 'full' 
   },
 ];

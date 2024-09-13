@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+import { IUser } from '../../domain/models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -16,21 +11,24 @@ export class LocalStorageService {
 
   constructor() {
     if (!localStorage.getItem(this.STORAGE_KEY)) {
-      const initialData: User[] = [
-        { id: 1, name: 'John Doe', email: 'john@example.com' },
-        { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-        { id: 3, name: 'Bob Johnson', email: 'bob@example.com' },
+      const initialData: IUser[] = [
+        {
+          id: 1,
+          name: 'John Doe',
+          email: 'john@example.com',
+          password: '123456',
+        },
       ];
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(initialData));
     }
   }
 
-  getUsers(): Observable<User[]> {
+  getUsers(): Observable<IUser[]> {
     const users = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
     return of(users).pipe(delay(300));
   }
 
-  addUser(user: User): Observable<User> {
+  addUser(user: IUser): Observable<IUser> {
     const users = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
     user.id = users.length + 1;
     users.push(user);

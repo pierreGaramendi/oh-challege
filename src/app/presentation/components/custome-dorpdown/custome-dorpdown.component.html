@@ -1,0 +1,11 @@
+<div class="dropdown__container">
+    <button (click)="toggleDropdown()" class="dropdown__button">
+        Opciones
+        <span class="arrow" [class.open]="isOpen">▼</span>
+    </button>
+    <div class="dropdown__menu" [class.open]="isOpen">
+        <a class="dropdown__item">Opción 1</a>
+        <a class="dropdown__item">Opción 2</a>
+        <a class="dropdown__item">Opción 3</a>
+    </div>
+</div>

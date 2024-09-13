@@ -9,7 +9,7 @@ import { Router, RouterModule } from '@angular/router';
 import {
   CookieService,
   SESSION_COOKIE,
-} from '../../../../../services/cookie.service';
+} from '../../../../../core/services/cookie.service';
 
 @Component({
   selector: 'app-signup-enter-data',
