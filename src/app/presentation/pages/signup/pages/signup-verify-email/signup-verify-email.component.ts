@@ -34,7 +34,6 @@ export class SignupVerifyEmailComponent {
       const email = this.stepOneForm.value.email;
       try {
         const exist: boolean = await this.findUserUseCase.execute(email);
-        console.log("usuario existe", exist);
         if (exist) {
           alert('El usuario ya está registrado');
           this.router.navigate(['/login']);

@@ -6,9 +6,7 @@ export const StepTwoGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const stepService = inject(SignupStepsService);
   const email = stepService.getEmail();
-  console.log('email', email);
   if (email) {
-    //router.navigate(['/signup/enter-data']);
     return true;
   }
   router.navigate(['/signup/verify-email']);

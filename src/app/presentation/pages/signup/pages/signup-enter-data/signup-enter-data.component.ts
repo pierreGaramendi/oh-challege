@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -41,9 +43,23 @@ export class SignupEnterDataComponent {
         Validators.minLength(6),
       ]),
       confirmPassword: new FormControl('', Validators.required),
-    });
-  }
+    }, { validators: this.passwordMatchValidator });
 
+    
+  }
+  passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+
+    if (password?.value !== confirmPassword?.value) {
+      confirmPassword?.setErrors({ passwordMismatch: true });
+      return { passwordMismatch: true };
+    } else {
+      confirmPassword?.setErrors(null);
+      return null;
+    }
+  }
+  
   async onSubmit() {
     if (this.stepTwoForm.valid) {
       const email = this.stepTwoForm.value.email;
