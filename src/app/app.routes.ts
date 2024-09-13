@@ -32,6 +32,23 @@ export const routes: Routes = [
       import('./presentation/pages/signup/signup.component').then(
         (m) => m.SignupComponent
       ),
+    children: [
+      {
+        path: 'verify-email',
+        loadComponent: () =>
+          import(
+            './presentation/pages/signup/pages/signup-verify-email/signup-verify-email.component'
+          ).then((m) => m.SignupVerifyEmailComponent),
+      },
+      {
+        path: 'enter-data',
+        loadComponent: () =>
+          import(
+            './presentation/pages/signup/pages/signup-enter-data/signup-enter-data.component'
+          ).then((m) => m.SignupEnterDataComponent),
+      },
+      { path: '', redirectTo: '/signup/verify-email', pathMatch: 'full' }
+    ],
   },
   {
     path: '**',

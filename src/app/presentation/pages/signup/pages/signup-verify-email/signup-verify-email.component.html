@@ -1,0 +1,22 @@
+<h1 class="register__title">Ingresa tus datos</h1>
+<form [formGroup]="stepOneForm" class="register__form" (ngSubmit)="onSubmit()">
+    <div class="register__field">
+        <label class="register__label" for="email">Correo Electrónico</label>
+        <input id="email" class="register__input" type="email" formControlName="email"
+            placeholder="Ingresa tu correo" />
+        @if(email?.invalid && email?.touched){
+        <div class="register__error">
+            @if(email?.errors?.['required']){
+            <small>Email is required</small>
+            }
+            @if(email?.errors?.['email']){
+            <small>Invalid email format</small>
+            }
+        </div>
+        }
+    </div>
+    <button type="submit" [disabled]="!isFormValid" class="register__button">Continuar</button>
+</form>
+@if(error) {
+    <p class="register__error">{{ error }}</p>
+}

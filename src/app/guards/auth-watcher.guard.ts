@@ -1,19 +1,14 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
+import { CookieService, SESSION_COOKIE } from '../services/cookie.service';
 
 export const authWatcherGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  if (checkCookieExists('mySession')) {
-    return true; // Permitir el acceso si la cookie existe
+  const cookieService = inject(CookieService);
+  if (cookieService.checkCookieExists(SESSION_COOKIE.name)) {
+    return true;
   } else {
-    router.navigate(['/login']); // Redirigir al login si no existe la cookie
+    router.navigate(['/login']);
     return false;
   }
-};
-
-const checkCookieExists = (name: string) => {
-  const cookieValue = document.cookie
-    .split('; ')
-    .find((row) => row.startsWith(`${name}=`));
-  return !!cookieValue; // Devuelve true si la cookie existe, de lo contrario false
 };

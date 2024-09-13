@@ -1,15 +1,5 @@
 <div class="register">
     <div class="register__container">
-        <h1 class="register__title">Verificar Correo</h1>
-        <form class="register__form" (submit)="verificarCorreo()">
-            <div class="register__field">
-                <label class="register__label" for="email">Correo Electrónico</label>
-                <input id="email" class="register__input" type="email"
-                    placeholder="Ingresa tu correo" />
-            </div>
-            <button type="submit" class="register__button">Verificar</button>
-        </form>
-        <p *ngIf="error" class="register__error">{{ error }}</p>
-        <p *ngIf="success" class="register__success">{{ success }}</p>
+        <router-outlet />
     </div>
 </div>
