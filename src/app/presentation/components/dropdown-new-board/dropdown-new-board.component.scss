@@ -71,19 +71,22 @@
     cursor: pointer;
 
     &--blue {
-      background-color: #0052cc;
+      background-color: $color-blue;
     }
 
     &--green {
-      background-color: #00a86b;
+      background-color: $color-green;
     }
 
     &--purple {
-      background-color: #8a2be2;
+      background-color: $color-purple;
     }
 
     &--yellow {
-      background-color: #ffd700;
+      background-color: $color-yellow;
     }
   }
 }
+
+
+
