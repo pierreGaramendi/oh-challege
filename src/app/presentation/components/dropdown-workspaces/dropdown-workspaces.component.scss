@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.dropdown__workspace {
+  color: $color-text;
+  padding: $spacing-large;
+  &__item {
+    margin-top: $spacing-large;
+  }
+}

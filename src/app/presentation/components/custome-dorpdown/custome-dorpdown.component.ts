@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
-
+import { signal, computed, input } from '@angular/core';
 @Component({
   selector: 'app-custome-dorpdown',
   standalone: true,
@@ -9,7 +9,7 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class CustomeDorpdownComponent {
   isOpen = false;
-
+  title = input.required<string>();
   constructor(private eRef: ElementRef) {}
 
   toggleDropdown() {

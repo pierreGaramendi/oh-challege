@@ -33,16 +33,9 @@
   &__nav {
     display: flex;
     gap: $spacing-large;
-
-    &-link {
-      font-size: $font-size-medium;
-      text-decoration: none;
-      font-weight: $font-weight-medium;
-      color: $color-white;
-      &:hover {
-        color: $color-primary-hover;
-        text-decoration: underline;
-      }
-    }
   }
+}
+
+.dropdown__item{
+  color:red
 }
