@@ -1,0 +1,100 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $color-background;
+
+  &__container {
+    background-color: $color-white;
+    padding: $spacing-xlarge;
+    @include border-radius($border-radius-large);
+    @include box-shadow;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-large;
+    color: $color-text;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    margin-bottom: $spacing-xlarge;
+    text-align: left;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $spacing-small;
+    font-size: 0.9rem;
+    color: $color-text;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-medium;
+    box-sizing: border-box;
+    border: 1px solid $color-border;
+    @include border-radius;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: $color-primary;
+      outline: none;
+    }
+  }
+
+  &__button {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-medium;
+    border: none;
+    @include border-radius;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &__options {
+    margin-top: $spacing-xlarge;
+
+    @include flex-centered;
+    flex-direction: row;
+
+    &__link {
+      @include flex-centered;
+      flex-direction: row;
+      justify-content: center;
+      display: block;
+      color: $color-link;
+      font-size: $font-size-base;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-link-hover;
+        text-decoration: underline;
+      }
+    }
+
+    &__separator {
+      margin-left: $spacing-small;
+      margin-right: $spacing-small;
+      font-weight: $font-weight-exxtrabold;
+      font-size: $font-size-xxlarge;
+    }
+  }
+}

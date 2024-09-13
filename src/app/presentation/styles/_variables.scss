@@ -1,0 +1,54 @@
+// Colors
+$color-background: #f4f5f7;
+$color-white: #ffffff;
+$color-primary: #0079bf;
+$color-primary-hover: #026aa7;
+$color-border: #dfe1e6;
+$color-text: #333333;
+$color-link: #0079bf;
+$color-link-hover: #005b99;
+
+// Spacing
+$spacing-small: 0.5rem;
+$spacing-medium: 0.75rem;
+$spacing-large: 1rem;
+$spacing-xlarge: 1.5rem;
+
+// Border Radius
+$border-radius: 4px;
+$border-radius-large: 8px;
+
+// Shadows
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+
+$font-size-small: 0.875rem;  // Aproximadamente 14px
+$font-size-base: 1rem;       // 16px (tamaño base del navegador)
+$font-size-medium: 1.125rem;  // 18px
+$font-size-large: 1.25rem;    // 20px
+$font-size-xlarge: 1.5rem;    // 24px
+$font-size-xxlarge: 2rem;     // 32px
+
+// Font Weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-exxtrabold: 900;
+
+// Estados (colores principales)
+$color-success: #28a745;    // Verde para éxito
+$color-success-hover: #218838;
+$color-danger: #dc3545;     // Rojo para peligro/error
+$color-danger-hover: #c82333;
+$color-warning: #ffc107;    // Amarillo para advertencia
+$color-warning-hover: #e0a800;
+$color-info: #17a2b8;       // Azul para información
+$color-info-hover: #138496;
+
+// Textos en estados
+$color-text-success: #155724;
+$color-text-danger: #721c24;
+$color-text-warning: #856404;
+$color-text-info: #0c5460;

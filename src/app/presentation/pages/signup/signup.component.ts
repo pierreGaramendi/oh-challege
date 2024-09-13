@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
+  error=""
+  success=""
+  verificarCorreo(){
 
+  }
 }

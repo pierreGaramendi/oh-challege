@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authWatcherGuard } from './guards/auth-watcher.guard';
 
 export const routes: Routes = [
   {
@@ -7,6 +8,7 @@ export const routes: Routes = [
       import('./presentation/layout/layout.component').then(
         (m) => m.LayoutComponent
       ),
+    canActivate: [authWatcherGuard],
     children: [
       {
         path: 'home',
